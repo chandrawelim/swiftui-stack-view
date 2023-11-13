@@ -11,10 +11,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.black, .gray]),
-                           startPoint: .topLeading,
-                           endPoint: .bottomTrailing)
-                .edgesIgnoringSafeArea(.all)
+            BackgroundView()
             
             VStack(spacing: 8) {
                 Text("Jakarta")
@@ -43,65 +40,29 @@ struct ContentView: View {
                     Divider()
                     
                     HStack(spacing: 8) {
-                        VStack {
-                            Text("Now")
-                            Image(systemName: "cloud.fill")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("33°")
-                        }
+                        WeatherTimeView(hourLabel: "Now",
+                                        systemImageString: "cloud.fill",
+                                        degreeLabel: "33°")
                         
-                        VStack {
-                            Text("15")
-                            Image(systemName: "cloud.sun")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("31°")
-                        }
+                        WeatherTimeView(hourLabel: "15",
+                                        systemImageString: "cloud.sun",
+                                        degreeLabel: "31°")
                         
-                        VStack {
-                            Text("16")
-                            Image(systemName: "cloud.fill")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("30°")
-                        }
+                        WeatherTimeView(hourLabel: "16",
+                                        systemImageString: "cloud.fill",
+                                        degreeLabel: "30°")
                         
-                        VStack {
-                            Text("17")
-                            Image(systemName: "cloud.drizzle")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("29°")
-                        }
+                        WeatherTimeView(hourLabel: "17",
+                                        systemImageString: "cloud.drizzle",
+                                        degreeLabel: "29°")
                         
-                        VStack {
-                            Text("18")
-                            Image(systemName: "cloud.bolt")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("28°")
-                        }
+                        WeatherTimeView(hourLabel: "18",
+                                        systemImageString: "cloud.bolt",
+                                        degreeLabel: "28°")
                         
-                        VStack {
-                            Text("19")
-                            Image(systemName: "cloud.bolt.rain")
-                                .renderingMode(.original)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                            Text("26°")
-                        }
+                        WeatherTimeView(hourLabel: "19",
+                                        systemImageString: "cloud.bolt.rain",
+                                        degreeLabel: "26°")
                     }
                     .padding(.bottom)
                 }
@@ -117,7 +78,7 @@ struct ContentView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
                         
-                        Text("3-DAY FORECAST")
+                        Text("DAYS FORECAST")
                             .foregroundColor(.white)
                         
                         Spacer()
@@ -128,110 +89,21 @@ struct ContentView: View {
                         .padding(.trailing)
                         .padding(.leading)
 
-                    HStack {
-                        Text("Today")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                            .frame(width: 60, alignment: .leading)
-                        
-                        Image(systemName: "cloud.rain")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                        
-                        Text("25°")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                        
-                        ZStack {
-                            Rectangle()
-                                .fill(LinearGradient(gradient: Gradient(colors: [.orange, .red]),
-                                                     startPoint: .topLeading,
-                                                     endPoint: .bottomTrailing))
-                                .frame(height: 4)
-                                .cornerRadius(10)
-                        }
-                        
-                        Text("33°")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                    }
-                    .padding()
+                    WeatherForecastView(dayLabel: "Today",
+                                        systemImageString: "cloud.rain",
+                                        degreeFromLabel: "25°",
+                                        degreeToLabel: "33°")
                     
-                    Divider()
-                        .padding(.trailing)
-                        .padding(.leading)
+                    WeatherForecastView(dayLabel: "Sun",
+                                        systemImageString: "cloud.rain",
+                                        degreeFromLabel: "25°",
+                                        degreeToLabel: "33°")
                     
-                    HStack {
-                        Text("Sun")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                            .frame(width: 60, alignment: .leading)
-                        
-                        Image(systemName: "cloud.rain")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                        
-                        Text("25°")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                        
-                        ZStack {
-                            Rectangle()
-                                .fill(LinearGradient(gradient: Gradient(colors: [.orange, .red]),
-                                                     startPoint: .topLeading,
-                                                     endPoint: .bottomTrailing))
-                                .frame(height: 4)
-                                .cornerRadius(10)
-                        }
-                        
-                        Text("34°")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                    }
-                    .padding()
-                    
-                    Divider()
-                        .padding(.trailing)
-                        .padding(.leading)
-                    
-                    HStack {
-                        Text("Sun")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                            .frame(width: 60, alignment: .leading)
-                        
-                        Image(systemName: "cloud.rain")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                        
-                        Text("25°")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                        
-                        ZStack {
-                            Rectangle()
-                                .fill(LinearGradient(gradient: Gradient(colors: [.orange, .red]),
-                                                     startPoint: .topLeading,
-                                                     endPoint: .bottomTrailing))
-                                .frame(height: 4)
-                                .cornerRadius(10)
-                        }
-                        
-                        Text("34°")
-                            .foregroundColor(.white)
-                            .font(.system(size: 20, weight: .semibold))
-                    }
-                    .padding()
-                    
-                    Divider()
-                        .padding(.trailing)
-                        .padding(.leading)
+                    WeatherForecastView(dayLabel: "Sun",
+                                        systemImageString: "cloud.rain",
+                                        degreeFromLabel: "25°",
+                                        degreeToLabel: "33°")
+                
                 }
                 .background(.gray)
                 .foregroundColor(.white)
