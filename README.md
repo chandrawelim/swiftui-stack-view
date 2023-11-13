@@ -1,6 +1,7 @@
 ## Overview
 
-This SwiftUI project showcases a sleek and visually appealing weather app. Leveraging SwiftUI's powerful layout views, including VStack, HStack, and ZStack, the app delivers a modern and immersive user experience.
+This SwiftUI project showcases a sleek and visually appealing weather app. 
+Leveraging [SwiftUI](https://developer.apple.com/xcode/swiftui/)'s powerful layout views, including [VStack](https://developer.apple.com/documentation/swiftui/vstack), [HStack](https://developer.apple.com/documentation/swiftui/hstack), and [ZStack](https://developer.apple.com/documentation/swiftui/zstack), the app delivers a modern and immersive user experience.
 
 ## Screenshots
 
@@ -19,10 +20,10 @@ git clone https://github.com/chandrawelim/swiftui-stack-view.git
 
 ## Features
 
-- [x] Dynamic Weather Information: Display current weather conditions, temperature, and a brief description.
-- [x] Hourly Forecast: Visualize hourly weather updates with icons and temperatures.
-- [x] Daily Forecast: Plan ahead with a concise daily weather overview.
-- [x] Visual Appeal: Utilize gradients, colors, and custom components for an engaging UI.
+- [x] **Dynamic Weather Information:** Display current weather conditions, temperature, and a brief description.
+- [x] **Hourly Forecast:** Visualize hourly weather updates with icons and temperatures.
+- [x] **Daily Forecast:** Plan ahead with a concise daily weather overview.
+- [x] **Visual Appeal:** Utilize gradients, colors, and custom components for an engaging UI.
 
 ## Code Structure
 
